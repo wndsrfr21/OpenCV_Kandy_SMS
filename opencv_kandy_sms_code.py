@@ -39,8 +39,9 @@ while True:
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
- # Send a text message to a cell number to notify that a person has been detected       
-        requests.post('https://wt-wndsrfr21-gmail_com-0.run.webtask.io/hello?msgvar=%22Hello! Face detected! %22&phonenumber=+14443338888')
+    # Send a text message to a cell number to notify that a person has been detected       
+    # Please reference this blog(https://github.com/wndsrfr21/Kandy_SMS_NodeJS_Webtask.io/blob/master/README.md) for more information about how to setup a webtask to access the Kandy SMS API via HTTP    
+    requests.post('https://wt-wndsrfr21-gmail_com-0.run.webtask.io/hello?msgvar=%22Hello! Face detected! %22&phonenumber=+14443338888')
 
     if anterior != len(faces):
         anterior = len(faces)
